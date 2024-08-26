@@ -1,0 +1,13 @@
+@if (icone && !isPassword) {
+  <img alt="iconeinput" [src]="icone" class="img-icone-input"/>
+}
+@if (isPassword) {
+  @if (isMostrarPassword) {
+    <img alt="iconeinput" [src]="assetsUtil.eyeSlashSVG" class="img-icone-input" (click)="mostrarEsconderPassword()" />
+  }
+  @if (!isMostrarPassword) {
+    <img alt="iconeinput" [src]="assetsUtil.eyeSVG" class="img-icone-input" (click)="mostrarEsconderPassword()" />
+  }
+}
+<input [type]="tipo" [placeholder]="placeholder" [disabled]="isDisabled" (input)="recuperarConteudo($event)" [value]="value" />
+

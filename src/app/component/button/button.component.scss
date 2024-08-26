@@ -1,0 +1,13 @@
+ion-button {
+  height: 48px;
+  width: 100%;
+  --box-shadow: 0 1.13px 2.25px -1.13px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16.75px;
+  --color: var(--go-lembrar-azul-branco);
+}
+.cor-azul-claro {
+  --background: var(--go-lembrar-azul-claro);
+}

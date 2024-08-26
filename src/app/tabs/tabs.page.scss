@@ -1,0 +1,26 @@
+.ion-label-menu-tabs {
+  font-family: 'Inter', sans-serif;
+  font-size: 11.17px;
+  font-weight: bold;
+  color: var(--go-lembrar-azul-claro);
+}
+ion-tab-bar {
+  --ion-tab-bar-background: var(--go-lembrar-azul-escuro);
+  height: 56px;
+}
+ion-tab-button {
+  img {
+    color: var(--go-lembrar-azul-claro);
+  }
+}
+.tab-selected {
+  border-bottom: 1px;
+  border-bottom-color: white;
+  border-bottom-style: solid;
+}
+.img-home {
+  margin: 0 0 9px 0;
+}
+.tab-selecionada {
+  color: white;
+}

@@ -1,0 +1,35 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button [tab]="rotasUtil.tabs.children.inicio" (click)="abrirTab(0)">
+      @if (tab !== 0) {
+        <img alt="home" class="img-home" [ngSrc]="assetsUtil.homeAzulSVG" width="18" height="16" />
+      }
+      @if (tab === 0) {
+        <img alt="home" class="img-home" [ngSrc]="assetsUtil.homeSVG" width="18" height="16" />
+      }
+      <ion-label class="ion-label-menu-tabs" [class.tab-selecionada]="tab === 0">{{stringsUtil.inicio}}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button [tab]="rotasUtil.tabs.children.contatos" (click)="abrirTab(1)">
+      @if (tab !== 1) {
+        <img alt="users" class="img-home" [ngSrc]="assetsUtil.usersAzulSVG" width="20" height="15" />
+      }
+      @if (tab === 1) {
+        <img alt="users" class="img-home" [ngSrc]="assetsUtil.usersSVG" width="20" height="15" />
+      }
+      <ion-label class="ion-label-menu-tabs" [class.tab-selecionada]="tab === 1">{{stringsUtil.contatos}}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3" (click)="abrirTab(2)">
+      @if (tab !== 2) {
+        <img alt="conf" class="img-home" [ngSrc]="assetsUtil.confAzulSVG" width="19" height="19" />
+      }
+      @if (tab === 2) {
+        <img alt="conf" class="img-home" [ngSrc]="assetsUtil.confSVG" width="19" height="19" />
+      }
+      <ion-label class="ion-label-menu-tabs" [class.tab-selecionada]="tab === 2">{{stringsUtil.configuracoes}}</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

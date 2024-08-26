@@ -1,0 +1,59 @@
+.ion-img-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin: -26px 0 0 66px;
+  text-align: end;
+}
+ion-card-content {
+  padding: 28px 24px;
+  background-color: var(--go-lembrar-azul-branco);
+}
+ion-card {
+  box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 32px;
+}
+.ion-label-login-titulo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 33px;
+  color: var(--go-lembrar-azul-claro);
+}
+.ion-row-login-titulo {
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+.ion-label-titulo-input {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.36px;
+  color: var(--go-lembrar-azul-escuro);
+}
+.ion-row-input {
+  margin: 8px 0 0 0;
+}
+.ion-row-label-senha {
+  margin: 32px 0 0 0;
+}
+.ion-label-esqueci-minha-senha {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--go-lembrar-azul-claro);
+  text-decoration-line: underline;
+}
+.ion-row-esqueci-minha-senha {
+  margin: 8px 0 32px 0;
+}
+.ion-row-nao-tenho-conta {
+  margin: 8px 0 0 0;
+}
+.img-logo {
+  height: 66.34px;
+}
+.ion-row-img-logo {
+  margin: 8.75% 0 0 0;
+}

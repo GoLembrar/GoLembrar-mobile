@@ -1,0 +1,12 @@
+<ion-select
+  [placeholder]="placeholder"
+  [labelPlacement]="'end'"
+  [toggleIcon]="'chevron-down-outline'"
+  [(ngModel)]="itemSelecionado"
+  (ionChange)="emitirSelecao()"
+>
+  <img [slot]="'start'" class="img-filtro" alt="filtro" [ngSrc]="assetUtil.filterSVG" width="10" height="10" />
+  @for (item of listItens; track item) {
+    <ion-select-option [value]="item.identificador">{{item.descricao}}</ion-select-option>
+  }
+</ion-select>

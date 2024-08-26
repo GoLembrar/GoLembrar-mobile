@@ -1,0 +1,8 @@
+<ion-card class="ion-no-padding ion-no-margin">
+  <ion-card-content class="ion-no-margin ion-text-center">
+    @if (status.isPending) {
+      <img alt="pending" [ngSrc]="assetsUtil.pendenteSVG" [height]="8.37" [width]="8.5" />
+      <ion-label>{{ stringsUtil.pending }}</ion-label>
+    }
+  </ion-card-content>
+</ion-card>

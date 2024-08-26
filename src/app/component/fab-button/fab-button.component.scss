@@ -1,0 +1,25 @@
+ion-fab-button {
+  --background:  rgba(255, 255, 255, 0.0);
+  --background-activated: rgba(255, 255, 255, 0.0);
+  --background-hover: rgba(255, 255, 255, 0.0);
+  --box-shadow: none;
+}
+ion-fab-button::part(native) {
+  color: var(--go-lembrar-azul-escuro);
+}
+ion-fab-list {
+  flex-direction: column;
+  margin-top: -10px;
+  margin-right: 40px;
+  ion-fab-button {
+    width: 150px;
+    height: 25px;
+    margin-bottom: 5px;
+  }
+  ion-label {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+    color: var(--go-lembrar-azul-claro);
+  }
+}

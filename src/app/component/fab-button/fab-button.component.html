@@ -1,0 +1,13 @@
+<ion-fab [slot]="'fixed'" [vertical]="'bottom'" [horizontal]="'end'">
+  <ion-fab-button>
+    <img alt="gfab" [ngSrc]="assetsUtil.gFabSVG" width="44" height="44" />
+  </ion-fab-button>
+  <ion-fab-list side="start">
+    <ion-fab-button>
+      <ion-label>{{stringsUtil.criarNovoContato}}</ion-label>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-label>{{stringsUtil.criarNovoLembrete}}</ion-label>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

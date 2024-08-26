@@ -1,0 +1,161 @@
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+
+      <ion-row class="ion-no-padding ion-row-fazer-cadastro-titulo">
+        <ion-col size="12" class="ion-no-margin ion-no-padding">
+          <ion-label class="ion-label-fazer-cadastro-titulo">{{stringsUtil.fazerCadastro}}</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <form [formGroup]="formGroup">
+        <ion-row class="ion-no-margin ion-no-padding">
+          <ion-col size="12" class="ion-no-margin ion-no-padding">
+            <ion-label class="ion-label-titulo-input">{{stringsUtil.nome}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-no-padding ion-row-input">
+          <ion-col size="12" class="ion-no-margin ion-no-padding"
+                   [class.erro-input]="isSubmetido && formGroup.controls[formControlName.nome].invalid"
+          >
+            <go-lembrar-input
+              [formControlName]="formControlName.nome"
+              [placeholder]="stringsUtil.digiteSeuNome"
+              (keyup)="recuperarDadosFormulario()"
+            ></go-lembrar-input>
+          </ion-col>
+          @if (isSubmetido && formGroup.controls[formControlName.nome].invalid) {
+            <ion-col size="12" class="ion-no-margin ion-no-padding">
+              <p class="p-mensagem-erro">{{
+                  formGroup.controls[formControlName.nome].errors?.['required'] ?
+                    stringsUtil.campoObrigatorio :
+                    formGroup.controls[formControlName.nome].errors?.['maxlength'] ?
+                      'Máximo de ' + formGroup.controls[formControlName.nome].errors?.['maxlength']['requiredLength'] + ' caracteres' :
+                      formGroup.controls[formControlName.nome].errors?.['nomeCompleto'] ?
+                        formGroup.controls[formControlName.nome].errors?.['nomeCompleto'] : null
+                }}</p>
+            </ion-col>
+          }
+        </ion-row>
+
+        <ion-row class="ion-no-margin ion-row-label-input">
+          <ion-col size="12" class="ion-no-margin ion-no-padding">
+            <ion-label class="ion-label-titulo-input">{{stringsUtil.email}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-no-padding ion-row-input">
+          <ion-col size="12" class="ion-no-margin ion-no-padding"
+                   [class.erro-input]="isSubmetido && formGroup.controls[formControlName.email].invalid">
+            <go-lembrar-input
+              [formControlName]="formControlName.email"
+              [placeholder]="stringsUtil.digiteSeuEmail"
+              [icone]="assetsUtil.envelopeSVG"
+              (keyup)="recuperarDadosFormulario()"
+            ></go-lembrar-input>
+          </ion-col>
+          @if (isSubmetido && formGroup.controls[formControlName.email].invalid) {
+            <ion-col size="12" class="ion-no-margin ion-no-padding">
+              <p class="p-mensagem-erro">{{
+                  formGroup.controls[formControlName.email].errors?.['required'] ?
+                    stringsUtil.campoObrigatorio :
+                    formGroup.controls[formControlName.email].errors?.['maxlength'] ?
+                      'Máximo de ' + formGroup.controls[formControlName.email].errors?.['maxlength']['requiredLength'] + ' caracteres' :
+                      formGroup.controls[formControlName.email].errors?.['email'] ?
+                        stringsUtil.informeEmailValido : null
+                }}</p>
+            </ion-col>
+          }
+        </ion-row>
+
+        <ion-row class="ion-no-margin ion-row-label-input">
+          <ion-col size="12" class="ion-no-margin ion-no-padding">
+            <ion-label class="ion-label-titulo-input">{{stringsUtil.senha}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-no-padding ion-row-input">
+          <ion-col size="12" class="ion-no-margin ion-no-padding"
+                   [class.erro-input]="isSubmetido && formGroup.controls[formControlName.senha].invalid">
+            <go-lembrar-input
+              [formControlName]="formControlName.senha"
+              [placeholder]="stringsUtil.digiteSuaSenha"
+              [isPassword]="true"
+              (keyup)="recuperarDadosFormulario()"
+            ></go-lembrar-input>
+          </ion-col>
+          @if (isSubmetido && formGroup.controls[formControlName.senha].invalid) {
+            <ion-col size="12" class="ion-no-margin ion-no-padding">
+              <p class="p-mensagem-erro">{{
+                  formGroup.controls[formControlName.senha].errors?.['required'] ?
+                    stringsUtil.campoObrigatorio :
+                    formGroup.controls[formControlName.senha].errors?.['minlength'] ?
+                      'Mínimo de ' + formGroup.controls[formControlName.senha].errors?.['minlength']['requiredLength'] + ' caracteres' :
+                      formGroup.controls[formControlName.senha].errors?.['maxlength'] ?
+                        'Máximo de ' + formGroup.controls[formControlName.senha].errors?.['maxlength']['requiredLength'] + ' caracteres' :
+                        formGroup.controls[formControlName.senha].errors?.['maiuscula'] ?
+                          formGroup.controls[formControlName.senha].errors?.['maiuscula'] :
+                          formGroup.controls[formControlName.senha].errors?.['senhasDiferentes'] ?
+                            formGroup.controls[formControlName.senha].errors?.['senhasDiferentes'] : null
+
+                }}</p>
+            </ion-col>
+          }
+        </ion-row>
+
+        <ion-row class="ion-no-margin ion-row-label-input">
+          <ion-col size="12" class="ion-no-margin ion-no-padding">
+            <ion-label class="ion-label-titulo-input">{{stringsUtil.confirmaSenha}}</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-no-padding ion-row-input">
+          <ion-col size="12" class="ion-no-margin ion-no-padding"
+                   [class.erro-input]="isSubmetido && formGroup.controls[formControlName.repetirSenha].invalid">
+            <go-lembrar-input
+              [formControlName]="formControlName.repetirSenha"
+              [placeholder]="stringsUtil.confirmeSuaSenha"
+              [isPassword]="true"
+              (keyup)="recuperarDadosFormulario()"
+            ></go-lembrar-input>
+          </ion-col>
+          @if (isSubmetido && formGroup.controls[formControlName.repetirSenha].invalid) {
+            <ion-col size="12" class="ion-no-margin ion-no-padding">
+              <p class="p-mensagem-erro">{{
+                  formGroup.controls[formControlName.repetirSenha].errors?.['required'] ?
+                    stringsUtil.campoObrigatorio :
+                    formGroup.controls[formControlName.repetirSenha].errors?.['minlength'] ?
+                      'Mínimo de ' + formGroup.controls[formControlName.repetirSenha].errors?.['minlength']['requiredLength'] + ' caracteres' :
+                      formGroup.controls[formControlName.repetirSenha].errors?.['maxlength'] ?
+                        'Máximo de ' + formGroup.controls[formControlName.repetirSenha].errors?.['maxlength']['requiredLength'] + ' caracteres' :
+                        formGroup.controls[formControlName.repetirSenha].errors?.['maiuscula'] ?
+                          formGroup.controls[formControlName.repetirSenha].errors?.['maiuscula'] :
+                            formGroup.controls[formControlName.repetirSenha].errors?.['senhasDiferentes'] ?
+                              formGroup.controls[formControlName.repetirSenha].errors?.['senhasDiferentes'] : null
+
+
+                }}</p>
+            </ion-col>
+          }
+        </ion-row>
+      </form>
+
+      <ion-row class="ion-row-botao-criar-conta ion-no-padding">
+        <ion-col size="12" class="ion-no-margin ion-no-padding">
+          <go-lembrar-button [nome]="stringsUtil.criarConta" (click)="cadastrar()"></go-lembrar-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding ion-row-criei-conta ion-text-center" (click)="abrirLogin()">
+        <ion-col size="12" class="ion-no-margin ion-no-padding">
+          <ion-label class="ion-label-criei-conta">{{stringsUtil.jaCrieiMinhaConta}}</ion-label>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<!--
+<ion-row class="ion-no-margin ion-no-padding">
+  <ion-col size="12" class="ion-no-margin ion-no-padding">
+
+  </ion-col>
+</ion-row>
+-->
